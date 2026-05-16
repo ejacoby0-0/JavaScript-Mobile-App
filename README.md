@@ -9,4 +9,4 @@ This repository contains the Android Mobile App developed as part of my formativ
 1. TripBuddy_v1.0
 
 
-This project is built using Android Studio as the development environemtn and JavaScript development practices.
+This project is built using Android Studio as the development environment and JavaScript development practices.

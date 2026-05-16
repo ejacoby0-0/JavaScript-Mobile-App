@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Trip_Planning.TripPlanningActivity">
+
+
+    <!--Destination-->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="11dp"
+        android:text="Trip Planner:"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtDestination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Notes-->
+    <EditText
+        android:id="@+id/edtDestination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Enter Distination"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtNotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <EditText
+        android:id="@+id/edtNotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="21dp"
+        android:hint="Enter notes based on the destination"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSelectDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtDestination" />
+
+
+    <!--Dates-->
+    <TextView
+        android:id="@+id/tvSelectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Select Date:"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btndatePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNotes" />
+
+    <!--list of predefined trip activities-->
+
+    <Button
+        android:id="@+id/btndatePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:hint="Select date"
+        android:onClick="openDatePicker"
+        android:textColor="@color/blue"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/lvOutdoorActivites"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectDate" />
+
+    <!--Expenses-->
+    <ListView
+        android:id="@+id/lvOutdoorActivites"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="19dp"
+        android:hint="Expenses"
+        app:layout_constraintBottom_toTopOf="@+id/edtCustomExpenses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btndatePicker" />
+
+
+    <!--additional travel-related expenses-->
+    <EditText
+        android:id="@+id/edtCustomExpenses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="25dp"
+        android:hint="Enter Custom Expenses"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAddExpenses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvOutdoorActivites" />
+
+    <!--Displaying updated total cost-->
+    <EditText
+        android:id="@+id/edtAddExpenses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="25dp"
+        android:hint="Addtional Expenses"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalCost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCustomExpenses" />
+
+    <TextView
+        android:id="@+id/tvTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="13dp"
+        android:text="Total: "
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvSubtotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAddExpenses" />
+
+    <!--Save Button-->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFinalTotal"
+        tools:ignore="MissingConstraints" />
+
+    <!--Subtotal-->
+
+    <!--Discount-->
+    <TextView
+        android:id="@+id/tvSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="22dp"
+        android:padding="8dp"
+        android:text="Subtotal: "
+        android:textColor="@color/blue"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDiscount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalCost" />
+
+    <!--Final total-->
+    <TextView
+        android:id="@+id/tvDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"
+        android:text="Discount: "
+        android:textColor="@color/blue"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFinalTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtotal" />
+
+    <TextView
+        android:id="@+id/tvFinalTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:padding="8dp"
+        android:text="Final Total: "
+        android:textColor="@color/blue"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiscount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
